@@ -28,6 +28,7 @@ public class Event implements Serializable {
     private Long id_Evt;
     private String type_Evt;
     private long nb_Inv;
+    private String ville_Evt;
     private boolean food_Req;
     private boolean drink_Req;
     private Date date_Evt;
@@ -35,6 +36,14 @@ public class Event implements Serializable {
     private ThemeEvent theme_Event;
     private Collection<FoodMenu>food_Menu;
     private Collection<DrinkMenu>drink_menu;
+
+    public String getVille_Evt() {
+        return ville_Evt;
+    }
+
+    public void setVille_Evt(String ville_Evt) {
+        this.ville_Evt = ville_Evt;
+    }
 
     public Long getId_Evt() {
         return id_Evt;
@@ -111,14 +120,16 @@ public class Event implements Serializable {
     public Event() {
     }
 
-    public Event(String type_Evt, long nb_Inv, boolean food_Req, boolean drink_Req, Date date_Evt) {
+    public Event(String type_Evt, long nb_Inv, String ville_Evt, boolean food_Req, boolean drink_Req, Date date_Evt) {
         this.type_Evt = type_Evt;
         this.nb_Inv = nb_Inv;
+        this.ville_Evt = ville_Evt;
         this.food_Req = food_Req;
         this.drink_Req = drink_Req;
         this.date_Evt = date_Evt;
     }
 
+  
    
     
     
