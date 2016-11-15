@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -29,9 +30,11 @@ public class Client implements Serializable{
     private String adress_Client;
     private String phone_Client;
     private Date BirthDate_Client;
-      
+    @OneToMany()
     private Collection<Commande>Commandes_Client;
+    @OneToMany()
     private Collection<History>Histories_Client;
+    @OneToMany()
     private Collection<NextEvent>NextEvent_Client;
 
     public Long getId_Client() {

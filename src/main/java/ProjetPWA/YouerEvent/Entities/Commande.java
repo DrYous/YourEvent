@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -28,8 +30,11 @@ public class Commande implements Serializable{
     private String name_Command;
     private float price_Command; 
     private Date date_Command;
-    
+    @ManyToOne
+    @JoinColumn(name="idEvent")
     private Event Event;
+    @ManyToOne
+    @JoinColumn(name="idClient")
     private Client Client;
 
     public Long getId_Command() {

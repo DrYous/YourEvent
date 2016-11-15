@@ -12,6 +12,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -32,9 +35,12 @@ public class Event implements Serializable {
     private boolean food_Req;
     private boolean drink_Req;
     private Date date_Evt;
-    
+    @ManyToOne
+    @JoinColumn(name="idThemeEvent")
     private ThemeEvent theme_Event;
+    @OneToMany(mappedBy="Events")
     private Collection<FoodMenu>food_Menu;
+     @OneToMany()
     private Collection<DrinkMenu>drink_menu;
 
     public String getVille_Evt() {

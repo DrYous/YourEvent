@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -27,8 +29,9 @@ public class NextEvent implements Serializable{
     private String name_NextEVt;
     private float price_NextEVt;
     private Date date_NextEVt;
-    
-     private Client Client_History;
+    @ManyToOne
+    @JoinColumn(name="idClient")
+     private Client client;
 
     public Long getId_NextEVt() {
         return id_NextEVt;
@@ -63,11 +66,11 @@ public class NextEvent implements Serializable{
     }
 
     public Client getClient_History() {
-        return Client_History;
+        return client;
     }
 
     public void setClient_History(Client Client_History) {
-        this.Client_History = Client_History;
+        this.client = client;
     }
 
     public NextEvent() {

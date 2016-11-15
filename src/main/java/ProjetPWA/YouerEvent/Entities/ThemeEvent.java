@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -26,7 +27,7 @@ public class ThemeEvent implements Serializable{
     private String name_Theme;
     private String Description_Theme;
     private byte[] photo_Theme;
-    
+     @OneToMany()
     private Collection<Event> Events;
 
     public Long getId_Theme() {

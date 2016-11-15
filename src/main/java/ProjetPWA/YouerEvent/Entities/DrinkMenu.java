@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -25,7 +26,7 @@ public class DrinkMenu implements Serializable{
    
     private Long id_DrinkM;
     private String name_DrinkM;
-    
+    @OneToMany()
     private Collection<Event>Events;
 
     public Long getId_DrinkM() {

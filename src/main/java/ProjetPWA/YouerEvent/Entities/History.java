@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -27,7 +29,8 @@ public class History implements Serializable{
     private float price_History;
     private int evaluated;
     private Date date_History;
-    
+    @ManyToOne
+    @JoinColumn(name="idClient")
      private Client Client_History;
 
     public Long getId_History() {

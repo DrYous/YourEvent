@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -29,7 +30,8 @@ public class User implements Serializable{
     private String password_User;
     private boolean actived;
     
-     private Collection<Role>Roles_User;
+    @OneToMany()
+    private Collection<Role>Roles_User;
 
     
     public Long getId_User() {
